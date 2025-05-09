@@ -12,7 +12,7 @@ import software.amazon.awssdk.services.s3.S3Client;
 @Configuration
 public class AwsConfig {
 
-    @Value("${aws.region}")
+    @Value("${aws.region:#{environment.AWS_REGION}}")
     private String awsRegion;
 
     @Bean

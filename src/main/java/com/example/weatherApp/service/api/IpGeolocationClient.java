@@ -20,10 +20,10 @@ public class IpGeolocationClient {
     private final RestTemplate restTemplate;
     private final ObjectMapper objectMapper;
 
-    @Value("${ipgeolocation.api.key}")
+    @Value("${ipgeolocation.api.key:#{environment.IPGEO_API_KEY}}")
     private String apiKey;
 
-    @Value("${ipgeolocation.api.url}")
+    @Value("${ipgeolocation.api.url:https://api.ipgeolocation.io/ipgeo}")
     private String apiUrl;
 
     @Cacheable(value = "ipLocation", key = "#ipAddress")

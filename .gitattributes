@@ -1,2 +1,18 @@
 /mvnw text eol=lf
 *.cmd text eol=crlf
+
+### Application Properties with secrets ###
+/src/main/resources/application.properties
+/src/main/resources/application-dev.properties
+/src/main/resources/application-prod.properties
+/src/main/resources/application-local.properties
+# But keep the template
+!/src/main/resources/application-template.properties
+
+### Environment files ###
+.env
+*.env
+
+### AWS credentials ###
+.aws/
+aws.properties

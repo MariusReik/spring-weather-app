@@ -30,10 +30,10 @@ public class OpenWeatherMapClient {
     private final RestTemplate restTemplate;
     private final ObjectMapper objectMapper;
 
-    @Value("${openweathermap.api.key}")
+    @Value("${openweathermap.api.key:#{environment.OPENWEATHER_API_KEY}}")
     private String apiKey;
 
-    @Value("${openweathermap.api.url}")
+    @Value("${openweathermap.api.url:https://api.openweathermap.org/data/2.5}")
     private String apiUrl;
 
     @Cacheable(value = "currentWeather", key = "#city")
